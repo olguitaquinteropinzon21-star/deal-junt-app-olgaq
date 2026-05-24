@@ -50,20 +50,6 @@ class AddEditViewModel extends ChangeNotifier {
   }) async {
     _setState(ViewState.loading);
     try {
-      final discount = Discount(
-        id: _editingDiscount?.id,
-        title: title.trim(),
-        description: description.trim(),
-        percentage: percentage,
-        categoryId: categoryId,
-        storeName: storeName.trim(),
-        imageUrl: imageUrl, // Corregido aquí también
-        couponCode: couponCode?.trim().toUpperCase(),
-        expirationDate: expirationDate,
-        isFavorite: _editingDiscount?.isFavorite ?? false,
-        createdAt: _editingDiscount?.createdAt ?? DateTime.now(),
-      );
-
       // Simulación de guardado
       await Future.delayed(const Duration(seconds: 1));
 
